@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vehicle-dealership
+  namespace: dealership
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vehicle-dealership
+  template:
+    metadata:
+      labels:
+        app: vehicle-dealership
+    spec:
+      containers:
+        - name: vehicle-dealership
+          image: dimitar88/vehicle-dealership:latest
+          ports:
+            - containerPort: 8000
+          envFrom:
+            - configMapRef:
+                name: app-config
+            - secretRef:
+                name: app-secret

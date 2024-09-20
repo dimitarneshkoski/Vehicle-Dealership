@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+  namespace: dealership
+data:
+  SQLALCHEMY_DATABASE_URL: "postgresql://postgres:Test123!@db-service:5432/vehicleDealership"
