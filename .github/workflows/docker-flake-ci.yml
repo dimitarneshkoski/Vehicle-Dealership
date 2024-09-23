@@ -31,7 +31,7 @@ jobs:
 
       - name: Lint with flake8
         run: |
-          flake8 $(find . -type f -name "*.py") || true
+          flake8 $(find . -type f -name "*.py")
 
   docker:
     runs-on: ubuntu-latest
